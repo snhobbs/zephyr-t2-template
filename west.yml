@@ -1,0 +1,24 @@
+manifest:
+  version: 0.8
+
+  projects:
+    - name: zephyr
+      url: https://github.com/zephyrproject-rtos/zephyr
+      revision: v4.2.0
+      import:
+        file: west.yml
+        path-prefix: deps
+        name-allowlist:
+          - zephyr
+          - cmsis
+          - cmsis_6
+          - hal_nordic
+          - mcuboot
+          - zcbor
+          - mbedtls
+          - modbus
+          - hal_rpi_pico
+          - picolibc
+
+  self:
+    path: application
