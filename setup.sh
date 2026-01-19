@@ -1,8 +1,12 @@
 #! /bin/sh
 # setup.sh
-mkdir ../.west
 
-west config manifest.path app
+SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd)"
+APP_PATH="$(basename ${SCRIPT_DIR})"
+
+mkdir "${SCRIPT_DIR}/../.west"
+
+west config manifest.path ${APP_PATH}
 west config manifest.file -- "west.yml"
 west config zephyr.base -- "deps/zephyr"
 west config update.sync-submodules true
